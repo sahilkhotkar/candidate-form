@@ -15,7 +15,7 @@
   <body>
     <div class="container-mt-5">
       <h2 class="text-center">Candidate Form</h2>
-      <form action="">
+      <form id="candidateForm" action="">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="empCode">Emp Code</label>
@@ -29,7 +29,7 @@
           <div class="form-group col-md-6">
             <label for="title">Title</label>
             <select class="form-control" id="title">
-              <option selected>Choose...</option>
+              <option value="" selected>Choose...</option>
               <option>Mr.</option>
               <option>Ms.</option>
               <option>Mrs.</option>
@@ -80,7 +80,7 @@
           <div class="form-group col-md-6">
             <label for="gender">Gender</label>
             <select id="gender" class="form-control">
-              <option selected>Choose...</option>
+              <option value="" selected>Choose...</option>
               <option>Male</option>
               <option>Female</option>
               <option>Other</option>
@@ -121,7 +121,7 @@
           <div class="form-group col-md-4">
             <label for="employmentType">Employment Type</label>
             <select id="employmentType" class="form-control">
-              <option selected>Choose...</option>
+              <option value="" selected>Choose...</option>
               <option>Internship</option>
               <option>Full-time</option>
               <option>Part-time</option>
@@ -165,7 +165,7 @@
               class="form-control"
               onchange="toggleHusbandField()"
             >
-              <option selected>Choose...</option>
+              <option value="" selected>Choose...</option>
               <option>Single</option>
               <option>Married</option>
               <option>Other</option>
@@ -322,5 +322,46 @@
         husbandField.style.display = "none";
       }
     }
+    document.getElementById("candidateForm").onsubmit = function (event) {
+      event.preventDefault();
+
+      const formData = {
+        empCode: document.getElementById("empCode").value,
+        title: document.getElementById("title").value,
+        firstName: document.getElementById("firstName").value,
+        middleName: document.getElementById("middleName").value,
+        lastName: document.getElementById("lastName").value,
+        displayName: document.getElementById("displayName").value,
+        gender: document.getElementById("gender").value,
+        dob: document.getElementById("dob").value,
+        doj: document.getElementById("doj").value,
+        designation: document.getElementById("designation").value,
+        department: document.getElementById("department").value,
+        employmentType: document.getElementById("employmentType").value,
+        personalNo: document.getElementById("personalNo").value,
+        personalEmail: document.getElementById("personalEmail").value,
+        nationality: document.getElementById("nationality").value,
+        maritalStatus: document.getElementById("maritalStatus").value,
+        aadhar: document.getElementById("aadhar").value,
+        pan: document.getElementById("pan").value,
+        fatherFirstName: document.getElementById("fatherFirstName").value,
+        husbandFirstName: document.getElementById("husbandFirstName").value,
+        currentAddress: document.getElementById("currentAddress").value,
+        permanentAddress: document.getElementById("permanentAddress").value,
+        bloodGroup: document.getElementById("bloodGroup").value,
+        emergencyContact1: {
+          name: document.getElementById("emergencyName1").value,
+          number: document.getElementById("emergencyNumber1").value,
+          relation: document.getElementById("emergencyRelation1").value,
+        },
+        emergencyContact2: {
+          name: document.getElementById("emergencyName2").value,
+          number: document.getElementById("emergencyNumber2").value,
+          relation: document.getElementById("emergencyRelation2").value,
+        },
+      };
+
+      console.log(formData);
+    };
   </script>
 </html>
