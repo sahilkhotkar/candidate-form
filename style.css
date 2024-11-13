@@ -1,3 +1,40 @@
-body{
-    padding: 16px;
-}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+  }
+  .container-mt-5 {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  h2, h4 {
+    color: #0062cc;
+  }
+  label {
+    color: #333;
+    font-weight: 500;
+  }
+  .form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    transition: all 0.2s ease;
+  }
+  .form-control:hover, .form-select:hover {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+  }
+  .btn-primary {
+    background-color: #0062cc;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+  }
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
